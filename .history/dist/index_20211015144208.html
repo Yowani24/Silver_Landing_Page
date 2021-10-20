@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+
+    <!-- ======================VUEJS CDN================ -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
+    <!-- =====================FONTS======================= -->
+
+    <link href="http://fonts.cdnfonts.com/css/gotham-book" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    
+
+    <style>
+        .Gotham_Book_font{
+            font-family: 'Gotham Book', sans-serif;
+        }
+        .Nunito_font{
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        .footer_menu li{
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 5px;
+        }
+        .btn_bg_color{
+            background: #382e2c;
+        }
+        .brown_color{
+            color: #382e2c;;
+        }
+        .bottom_fontsize{
+            font-size: 10px;
+        }
+        
+        @media (max-width: 500px){
+            .footer_menu li{
+                border-bottom: 1px solid #382e2c;
+            }
+            .footer_input{
+                width: 67%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="tw-border-b tw-border-gray-600">
+        <div class="tw-hidden md:tw-flex tw-items-center tw-justify-center tw-bg-gray-300 tw-py-2 tw-text-center">
+            <a id="helpText" class="tw-text-center hover:tw-text-red-500" v-show="helpTextVisible">STRONGER TOGETHER - Help support children in need now - <u>LEARN MORE</u></a>
+        </div>
+        <div style="width: 93%;" class="tw-mx-auto tw-my-6 tw-my-5 tw-flex tw-justify-between tw-items-center">
+            <nav class="tw-hidden lg:tw-flex">
+                <ul class="tw-flex tw-items-center tw-text-sm tw-font-bold tw-tracking-tight">
+                    <li class="tw-pr-4 hover:tw-text-red-500"><a href="#">Store Locator</a></li>
+                    <li class="tw-border-l tw-px-4 hover:tw-text-red-500"><a href="#">Wishlist</a></li>
+                    <li class="tw-border-l tw-pl-4 hover:tw-text-red-500"><a href="#">Retailer Login</a></li>
+                </ul>
+            </nav>
+
+            <img class=" tw-w-5 md:tw-w-6 lg:tw-hidden" src="https://www.pngjoy.com/pngl/41/952275_hamburger-icon-menu-icon-png-grey-hd-png.png" alt="">
+            <a href="./index.html">
+                <img class="tw-w-40 md:tw-w-72 lg:tw-w-auto" src="./images/logo_theme.svg" alt="">
+            </a>
+
+            <div class="tw-flex tw-items-center">
+                <img class="tw-w-9 md:tw-w-10 lg:tw-w-8 tw-pr-4" src="./images/search.svg" alt="">
+                <img class="tw-hidden lg:tw-flex tw-w-12 tw-border-l tw-px-4" src="https://icon-library.com/images/turn-icon/turn-icon-8.jpg" alt="">
+                <img class="tw-hidden lg:tw-flex tw-w-12 tw-border-l tw-px-4" src="./images/user.svg" alt="">
+                <img class="tw-hidden lg:tw-flex tw-w-12 tw-border-l tw-px-4" src="./images/language.svg" alt="">
+                <img class="tw-w-9 md:tw-w-10 lg:tw-w-8 tw-border-l tw-pl-4" src="./images/cart2.svg" alt="">
+                <svg id="svg-consumer-top" viewBox="0 0 512 512"><path d="M478.569,133.054L308.776,2.123c-3.08-2.373-7.24-2.793-10.729-1.076c-3.489,1.716-5.699,5.265-5.699,9.153v83.585H39.66c-5.632,0-10.199,4.566-10.199,10.199v74.294c0,5.633,4.567,10.199,10.199,10.199h252.688v83.585c0,3.888,2.21,7.437,5.699,9.153c1.427,0.702,2.966,1.046,4.499,1.046c2.212,0,4.41-0.72,6.229-2.122l169.793-130.93c2.505-1.931,3.972-4.914,3.972-8.077S481.073,134.985,478.569,133.054z M312.747,251.317v-73.04c0-5.633-4.567-10.199-10.199-10.199H49.859v-53.896h252.688c5.632,0,10.199-4.566,10.199-10.199V30.945l142.891,110.186L312.747,251.317z"></path><path d="M472.34,323.525H219.652v-83.585c0-3.888-2.21-7.437-5.699-9.153c-3.487-1.714-7.649-1.299-10.729,1.076L33.432,362.794c-2.505,1.931-3.972,4.914-3.972,8.077s1.468,6.146,3.972,8.077l169.792,130.93c1.82,1.402,4.015,2.122,6.229,2.122c1.532,0,3.072-0.345,4.499-1.046c3.489-1.716,5.699-5.265,5.699-9.153v-83.583H472.34c5.632,0,10.199-4.566,10.199-10.199v-74.294C482.539,328.091,477.972,323.525,472.34,323.525z M462.141,397.819H209.453c-5.632,0-10.199,4.566-10.199,10.199v73.039L56.362,370.871l142.89-110.186v73.04c0,5.633,4.567,10.199,10.199,10.199h252.689V397.819z"></path><path d="M181.141,424.169l-2.288-1.771c-4.451-3.446-10.859-2.632-14.308,1.823c-3.447,4.454-2.631,10.861,1.823,14.308l2.288,1.771c1.857,1.438,4.054,2.135,6.236,2.135c3.047,0,6.062-1.361,8.073-3.957C186.411,434.023,185.595,427.616,181.141,424.169z"></path><path d="M152.571,402.051l-42.295-32.745c-4.455-3.448-10.859-2.633-14.308,1.822c-3.448,4.454-2.633,10.86,1.821,14.308l42.295,32.745c1.858,1.438,4.055,2.135,6.237,2.135c3.047,0,6.061-1.361,8.072-3.956C157.839,411.905,157.025,405.499,152.571,402.051z"></path></svg>
+            </div>
+        </div>
+
+        <div class="menu tw-hidden lg:tw-flex tw-w-full tw-mt-9 tw-justify-center">
+            <nav class="tw-flex tw-justify-center">
+                <ul class="tw-flex tw-text-sm tw-text-gray-700">
+                    <li class="tw-py-2 tw-pb-5 tw-mx-4">
+                        <a class="" href="./engagement_rings.html">Engagement</a>
+                    </li>
+                    
+                    <li class="tw-py-2 tw-pb-5 tw-mx-4">
+                        <a href="">Wedding</a>
+                    </li>
+                    <li class="tw-py-2 tw-pb-5 tw-mx-4">
+                        <a href="">Necklaces</a>   
+                    </li>
+                    <li class="tw-py-2 tw-pb-5 tw-mx-4">
+                        <a href="">Rings</a>   
+                    </li>
+                    <li class="tw-py-2 tw-pb-5 tw-mx-4">
+                        <a href="">Earrings</a>
+                    </li>
+                    <li class="tw-py-2 tw-pb-5 tw-mx-4">
+                        <a href="">Bracelets</a>      
+                    </li>
+                    <li class="tw-py-2 tw-pb-5 tw-mx-4">
+                        <a href="">Gifts</a>
+                    </li>
+                    <li class="tw-py-2 tw-pb-5 tw-mx-4">
+                        <a href="">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div style="border-top: 1px solid rgb(238, 26, 4);" class="brown_color md:tw-px-4 md:tw-flex md:tw-flex-col-reverse lg:tw-flex-row lg:tw-px-14">
+        <div class="tw-flex tw-flex-col-reverse tw-items-center md:tw-flex-row md:tw-justify-between lg:tw-items-start">
+            <div id="footerMenu" class="tw-flex tw-flex-col tw-w-48 tw-mt-5 md:tw-w-96 md:tw-h-72 md:tw-flex-wrap lg:tw-h-64">
+                <ul class="Gotham_Book_font tw-text-sm tw-my-3 tw-flex-wrap tw-text-center tw-border-b-2 tw-border-gray-300 md:tw-border-none md:tw-text-left lg:tw-my-2" v-for="values in categories">
+                    <li><a href="">{{values.text}}</a></li>
+                </ul>
+            </div>
+
+            <div class="tw-text-center">
+                <p class="Nunito_font tw-tracking-wide tw-text-sm tw-mb-2 tw-mt-10 md:tw-mt-0 lg:tw-mt-8 lg:tw-text-left">BECOME AN INSIDER</p>
+                <div class="tw-flex tw-flex-col-reverse md:tw-flex-col md:tw-justify-center">
+                    <div>
+                        <input class="tw-border tw-border-gray-900 tw-w-44 tw-h-10 tw-rounded tw-pl-2 tw-text-sm md:tw-w-60" type="text" placeholder="Email">
+                        <button class="btn_bg_color tw-text-white tw-text-sm tw-px-4 tw-py-2 tw-rounded tw-ml-2 hover:tw-bg-red-700">Sign Up</button>
+                    </div>
+                    <p class="Nunito_font tw-text-sm tw-mb-2 md:tw-mt-3 md:tw-text-left lg:tw-text-auto"><a href="./engagement_rings.html">Sign up for special offers and other perks.</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tw-text-center md:tw-text-left md:tw-mb-4 lg:tw-ml-10">
+            <p class="Nunito_font tw-text-sm tw-tracking-wider tw-mb-2 tw-mt-5 md:tw-mb-4 md:tw-mt-10 lg:tw-mt-8">FOLLOW US</p>
+            <div class="tw-flex tw-justify-center md:tw-justify-start">
+                <div class="btn_bg_color hover:tw-bg-red-700 tw-w-7 tw-h-7 tw-rounded-full tw-flex tw-items-center tw-justify-center">
+                    <img class="tw-w-4" src="./images/facebook.svg" alt="">
+                </div>
+                <div class="btn_bg_color hover:tw-bg-red-700 tw-w-7 tw-h-7 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-mx-5">
+                    <img class="tw-w-4" src="https://icon-library.com/images/white-instagram-icon-png/white-instagram-icon-png-12.jpg" alt="">
+                </div>
+                <div class="btn_bg_color hover:tw-bg-red-700 tw-w-7 tw-h-7 tw-rounded-full tw-flex tw-items-center tw-justify-center">
+                    <img class="tw-w-5" src="./images/pinterest.svg" alt="">
+                </div>
+                <div class="btn_bg_color hover:tw-bg-red-700 tw-w-7 tw-h-7 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-mx-5">
+                    <img class="tw-w-4" src="https://icon-library.com/images/white-youtube-icon/white-youtube-icon-15.jpg" alt="">
+                </div>
+                <div class="btn_bg_color hover:tw-bg-red-700 tw-w-7 tw-h-7 tw-rounded-full tw-flex tw-items-center tw-justify-center">
+                    <img class="tw-w-12" src="https://icon-library.com/images/twitter-icon-white-png/twitter-icon-white-png-12.jpg" alt="">
+                </div>
+                <div class="btn_bg_color hover:tw-bg-red-700 tw-w-7 tw-h-7 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-ml-5 hover:tw-bg-red-500">
+                    <img class="tw-w-10" src="https://icon-library.com/images/linkedin-icon-white/linkedin-icon-white-10.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="tw-flex tw-flex-col tw-items-center tw-mt-10">
+        <img class="tw-w-48 tw-mb-2" src="https://cdn-themes.gabrielny.com/site2017theme/images/theme2019/svg/logo-theme2019.svg" alt="">
+        <ul class="Nunito_font tw-font-normal tw-text-xs tw-flex">
+            <li><a href="">Privacy Policy</a></li>
+            <li class="tw-border-l tw-border-r tw-border-gray-400 tw-px-2 tw-mx-2"><a href="">Warranty</a></li>
+            <li><a href="">Sitemap</a></li>
+        </ul>
+        <p class="bottom_fontsize tw-mt-2 tw-text-center">Gabriel & Co. 545 West 45th Street New York, NY, 10036 (212) 519 1400 cs@gabrielny.com</p>
+        <div class="tw-flex tw-items-center tw-mb-6">
+            <img src="https://cdn-images.gabrielny.com/is/image/GabrielCo/Default/~visa.jpg" alt="">
+            <img class="tw-m-2" src="https://cdn-images.gabrielny.com/is/image/GabrielCo/Default/~mastercard.jpg" alt="">
+            <img src="https://cdn-images.gabrielny.com/is/image/GabrielCo/Default/~american-opt.jpg" alt="">
+            <img class="tw-m-2" src="https://cdn-images.gabrielny.com/is/image/GabrielCo/Default/~visa.jpg" alt="">
+            <img src="https://cdn-images.gabrielny.com/is/image/GabrielCo/Default/~visa.jpg" alt="">
+        </div>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: '#footerMenu',
+            data: {
+                categories: [
+                    {text:'Bridal'},
+                    {text:'Fashion'},
+                    {text:'Gifts'},
+                    {text:'Contact Us'},
+                    {text:'Shipping & Return Policy'},
+                    {text:'Accessibility'},
+                    {text:'About Us'},
+                    {text:'Store Locator'},
+                    {text:'Blog'},
+                    {text:'Affiliate Program'},
+                    {text:'Current Promotions'},
+                ]
+            }
+        });
+    </script>
+
+</body>
+</html>
